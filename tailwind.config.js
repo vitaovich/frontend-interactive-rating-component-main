@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      overpass: ['Overpass', 'sans-sarif'],
+    },
   },
   plugins: [],
 }
