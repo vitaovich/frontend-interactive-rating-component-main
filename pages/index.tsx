@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
+import Rating from '@/components/rating'
 
 export default function Home() {
   return (
@@ -23,13 +24,7 @@ export default function Home() {
             Please let us know how we did with your support request. All feedback is appreciated
             to help us improve our offering!
           </p>
-          <div className="flex flex-row justify-center text-center text-lightGrey space-x-4 md:space-x-10">
-            <button className="flex items-center justify-center w-12 h-12 rounded-full bg-darkBlue p-6 hover:bg-orange hover:text-white"><span>1</span></button>
-            <button className="flex items-center justify-center w-12 h-12 rounded-full bg-darkBlue p-6 hover:bg-orange hover:text-white"><span>2</span></button>
-            <button className="flex items-center justify-center w-12 h-12 rounded-full bg-darkBlue p-6 hover:bg-orange hover:text-white"><span>3</span></button>
-            <button className="flex items-center justify-center w-12 h-12 rounded-full bg-darkBlue p-6 hover:bg-orange hover:text-white"><span>4</span></button>
-            <button className="flex items-center justify-center w-12 h-12 rounded-full bg-darkBlue p-6 hover:bg-orange hover:text-white"><span>5</span></button>
-          </div>
+          <Rating></Rating>
           <button className='bg-orange rounded-full py-3 tracking-widest hover:bg-white hover:text-orange'><span className="uppercase font-bold">Submit</span></button>
           {/* <!-- Rating state end --> */}
           {/* <!-- Thank you state start --> */}
