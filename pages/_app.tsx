@@ -9,7 +9,7 @@ const overpass = Overpass({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${overpass.variable} font-sans`}>
+    <main className={`${overpass.variable}`}>
       <Component {...pageProps} />
     </main>
   )
