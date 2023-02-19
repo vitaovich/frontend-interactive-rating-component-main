@@ -32,6 +32,7 @@ Users should be able to:
 
 - Desktop Version
 ![Desktop](./images/desktop-screenshot.png)
+![Desktop Submit](./images/desktop-screenshot-submit.png)
 
 ### Links
 
@@ -47,14 +48,52 @@ Users should be able to:
 - [Next.js](https://nextjs.org/) - React framework
 - [TailwindCSS](https://tailwindcss.com) - For styles
 - [Azure Static Web Apps](https://azure.microsoft.com/en-us/products/app-service/static) - For deployment and hosting
+- [Google Fonts](https://fonts.google.com/specimen/Overpass)
 
 ### What I learned
 
-Tailwind CSS was great for quickly designing this website.
+- Applying NextJS Font Optimization ([With Tailwind CSS](https://nextjs.org/docs/basic-features/font-optimization#with-tailwind-css))
 
+  - source file: [_app.tsx](https://github.com/vitaovich/frontend-interactive-rating-component-main/blob/main/pages/_app.tsx)
+    ```tsx
+    import { Overpass } from '@next/font/google'
+
+    const overpass = Overpass({
+      subsets: ['latin'],
+      variable: '--font-overpass'
+    })
+
+    export default function App({ Component, pageProps }: AppProps) {
+      return (
+        <main className={`${overpass.variable}`}>
+          <Component {...pageProps} />
+        </main>
+      )
+    }
+    ```
+  - source file: [tailwind.config.js](https://github.com/vitaovich/frontend-interactive-rating-component-main/blob/main/tailwind.config.js)
+    ```js
+    theme: {
+        ...
+        fontFamily: {
+          overpass: ['var(--font-overpass)'],
+        },
+      }
+    ```
+
+- Using useRef() to handle the selected ratings
+  - source file: [ratingButton.tsx](https://github.com/vitaovich/frontend-interactive-rating-component-main/blob/main/components/ratingButton.tsx)
+    ```tsx
+    const ratingRef = useRef<HTMLButtonElement>(null)
+    const handleRatingClick = () => {
+        if (ratingRef.current?.innerText !== undefined) {
+            props.onRatingClick(parseInt(ratingRef.current?.innerText))
+        }
+    }
+    ```
 ### Continued development
 
-I plan to continue focusing on how to layout components properly in order for positions and spacing of elements. Also, will start looking into using more features of React and NextJS to build more interactive components. Even make a few backend calls eventually.
+I plan to continue diving deeper into React and NextJS for tougher challenges requiring more interactivity.
 
 ### Useful resources
 
