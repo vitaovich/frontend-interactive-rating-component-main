@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen bg-veryDarkBlue text-white">
+      <div className="flex items-center justify-center min-h-screen bg-veryDarkBlue text-white font-overpass">
         <div className={`flex flex-col space-y-4 bg-gradient-to-b from-darkBlueTop to-darkBlueBottom p-4 m-4 rounded-xl md:w-1/3 ${submitted ? 'hidden' : ''}`}>
             <div>
               <button className="flex items-center justify-center w-12 h-12 rounded-full bg-darkBlue p-4">
@@ -50,7 +50,7 @@ export default function Home() {
             className='text-orange'
           />
             <span className="text-center text-orange rounded-full bg-darkBlue px-5 py-2">You selected {rating} out of 5</span>
-            <h1 className="text-3xl text-white">Thank you!</h1>
+            <h1 className="text-3xl text-white font-bold">Thank you!</h1>
             <p className="text-lightGrey text-center">
               We appreciate you taking the time to give a rating. If you ever need more support,
               don’t hesitate to get in touch!
