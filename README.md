@@ -91,6 +91,13 @@ Users should be able to:
         }
     }
     ```
+
+- Tailwind CSS gradient background ([Ending color](https://tailwindcss.com/docs/gradient-color-stops#ending-color))
+
+  ```css
+  bg-gradient-to-b from-darkBlueTop to-darkBlueBottom
+  ```
+
 ### Continued development
 
 I plan to continue diving deeper into React and NextJS for tougher challenges requiring more interactivity.
